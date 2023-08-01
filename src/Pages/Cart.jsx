@@ -2,12 +2,14 @@ import { useSelector } from "react-redux";
 import CartProduct from "../Components/CartProduct";
 import {
   Box,
+  Button,
   Center,
   Divider,
   HStack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, total } = useSelector((state) => state.cart);
@@ -34,6 +36,10 @@ const Cart = () => {
         <Text>Total :</Text>
         <Text as="span">${total.toFixed(2)}</Text>
       </HStack>
+        <Link to={"/checkout"}>
+         <Button>check out</Button>
+        </Link>
+     
     </Box>
   );
 };
